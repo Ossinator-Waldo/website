@@ -26,9 +26,10 @@
     <p id="demo"></p>
 
     <script>
+        
         // Setze das Ziel-Datum und die Ziel-Zeit (UTC-Zeit)
         var countDownDate = new Date("May 18, 2024 00:00:00 UTC").getTime();
-
+    
         // Aktualisiere den Countdown alle 1 Sekunde
         var x = setInterval(function() {
             // Hol dir das aktuelle Datum und die Zeit
@@ -48,13 +49,13 @@
             + minutes + "m " + seconds + "s ";
 
             // Wenn der Countdown abgelaufen ist, zeige eine Nachricht an
-            /*
+            
             if (distance < 0) {
                 clearInterval(x);
                 document.getElementById("demo").innerHTML = "Countdown abgelaufen!";
             }
         }, 1000);
-        */
+        
     </script>
 
 </body>
