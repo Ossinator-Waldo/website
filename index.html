@@ -9,24 +9,51 @@
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 50px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100vh;
+           flex-direction: column;
         }
         h1 {
             color: #333;
         }
-        #countdown {
-            font-size: 24px;
-            font-weight: bold;
-            margin-top: 20px;
+       
+        .container {
+            width: 25%;
+            height: auto;
+            background-color: #3498db;
+            margin: 10px;
+            justify-content: flex-start;
+            align-items: center;
+            line-height: 100px;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            border-radius: 25px;
+        }
+        .header{
+            width: 100%;
+            height: auto;
+            background-color: bisque;
+            border-radius: 10px;
         }
     </style>
 </head>
+
+<header>
+    <h1 class="header">Letzter Arbeitstag 20 Januar 2024</h1>
+</header>
 <body>
 
-    <h1>Letzter Arbeitstag 20 Januar 2024</h1>
+    <div>
+        
+    </div>
+ 
     <div class="container">
         <p id="demo"></p>
+        
     </div>
-    
+   
 
     <script>
         
