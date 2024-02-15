@@ -1,61 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countdown Timer</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 50px;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            height: 100vh;
-           flex-direction: column;
-        }
-        h1 {
-            color: #333;
-        }
-       
-        .container {
-            width: 25%;
-            height: auto;
-            background-color: #3498db;
-            margin: 10px;
-            justify-content: flex-start;
-            align-items: center;
-            line-height: 100px;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-            border-radius: 25px;
-        }
-        .header{
-            width: 100%;
-            height: auto;
-            background-color: bisque;
-            border-radius: 10px;
-        }
-    </style>
-</head>
+<style>
+.layout {
+  width: auto;
+  height: auto;
 
-<header>
-    <h1 class="header">Letzter Arbeitstag 20 Januar 2024</h1>
-</header>
-<body>
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 
-    <div>
-        
-    </div>
+  justify-content: center;
+  align-items: center;
  
-    <div class="container">
-        <p id="demo"></p>
-        
-    </div>
-   
+}
 
-    <script>
+ 
+div{
+    width: 50%;
+
+    border: 2px solid black;
+    border-width: auto;
+    border-radius: 20px;
+    
+    
+    display: flex;
+    justify-content: center;
+}
+#LastWorkDay{
+    display: flex;
+    justify-content: center;
+    text-shadow: 3px ;
+    }
+</style>
+
+<head>
+    <h1 id="LastWorkDay"> Letzter Arbeitstag 20 Januar 2024 </h1>
+</head>
+<body>
+    
+    <section class="layout">
+        <div id="Monate"> </div>        
+        <div id="demo"></div>
+        <div id="allHours">5</div>
+        
+      </section>
+
+      <script>
         
         // Setze das Ziel-Datum und die Ziel-Zeit (UTC-Zeit)
         var countDownDate = new Date("January 20, 2025 00:00:00 UTC").getTime();
@@ -69,15 +59,20 @@
             var distance = countDownDate - now;
 
             // Berechne Tage, Stunden, Minuten und Sekunden
+            var Months = Math.floor(distance / (1000 * 60 * 60 * 24 * 31));
             var days = Math.floor(distance / (1000 * 60 * 60 * 24));
             var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+            var allHours = (days * 24) + hours;
+
             // Anzeige des Countdowns
+            document.getElementById("Monate").innerHTML = Months + " Monate ";
             document.getElementById("demo").innerHTML = days + "d " + hours + "h "
             + minutes + "m " + seconds + "s ";
-
+            document.getElementById("allHours").innerHTML = allHours + " Stunden Insgesamt noch ";
+            
             // Wenn der Countdown abgelaufen ist, zeige eine Nachricht an
             
             if (distance < 0) {
@@ -87,6 +82,5 @@
         }, 1000);
         
     </script>
-
 </body>
 </html>
